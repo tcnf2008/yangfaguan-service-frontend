@@ -53,9 +53,9 @@
             </template>
             <el-menu-item-group>
               <el-menu-item v-if="user.role === 'ADMIN'" index="/salon">门店信息</el-menu-item>
-              <el-menu-item v-if="user.role === 'ADMIN' ||user.role === 'MANAGER'" index="/technician">技师信息
+              <el-menu-item v-if="user.role === 'ADMIN' || user.role === 'MANAGER'" index="/technician">技师信息
               </el-menu-item>
-              <el-menu-item index="/service">技能服务信息</el-menu-item>
+              <el-menu-item  v-if="user.role === 'ADMIN'" index="/service">技能服务信息</el-menu-item>
               <el-menu-item index="/userAppointment">顾客预约信息</el-menu-item>
             </el-menu-item-group>
           </el-submenu>

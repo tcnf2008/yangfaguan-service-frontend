@@ -91,7 +91,7 @@ export default {
   // 定义一些页面上控件出发的事件调用的方法
   methods: {
     findBySearch() {
-      request.get("/salon/findByUserId?userId=" + this.user.id, {
+      request.get("/salon/findByUserId?userId=" + this.user.id + "&pageSize=" + this.params.pageSize + "&pageNum=" + this.params.pageNum, {
         params: null
       }).then(res => {
         if (res.code === 0) {

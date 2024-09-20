@@ -112,8 +112,7 @@ export default {
       });
     },
     findBySearch() {
-      request.get("/salon/findBySalonId?salonId=" + this.params.salonId
-          + "&pageSize=" + this.params.pageSize + "&pageNum=" + this.params.pageNum, {
+      request.get("/salon/findBySalonId?salonId=" + this.params.salonId + "&pageSize=" + this.params.pageSize + "&pageNum=" + this.params.pageNum, {
         params: null
       }).then(res => {
         if (res.code === 0) {
