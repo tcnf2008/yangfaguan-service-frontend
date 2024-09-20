@@ -23,17 +23,17 @@
         </el-table-column>
       </el-table>
     </div>
-    <div style="margin-top: 10px">
-      <el-pagination
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-          :current-page="params.pageNum"
-          :page-sizes="[20,50,100]"
-          :page-size="params.pageSize"
-          layout="total, sizes, prev, pager, next"
-          :total="total">
-      </el-pagination>
-    </div>
+<!--    <div style="margin-top: 10px">-->
+<!--      <el-pagination-->
+<!--          @size-change="handleSizeChange"-->
+<!--          @current-change="handleCurrentChange"-->
+<!--          :current-page="params.pageNum"-->
+<!--          :page-sizes="[20,50,100]"-->
+<!--          :page-size="params.pageSize"-->
+<!--          layout="total, sizes, prev, pager, next"-->
+<!--          :total="total">-->
+<!--      </el-pagination>-->
+<!--    </div>-->
     <div>
       <el-dialog title="请填写信息" :visible.sync="dialogFormVisible" width="30%">
         <el-form :model="form">
@@ -82,7 +82,9 @@ export default {
   // 定义一些页面上控件出发的事件调用的方法
   methods: {
     loadSalon() {
-      request.get("/salon/findAll", {
+      request.get("/salon/findAll"
+          //?pageSize=" + this.params.pageSize + "&pageNum=" + this.params.pageNum
+          , {
         params: null
       }).then(res => {
         console.log(res);

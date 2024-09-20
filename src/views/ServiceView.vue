@@ -55,17 +55,17 @@
         </el-table-column>
       </el-table>
     </div>
-    <div style="margin-top: 10px">
-      <el-pagination
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-          :current-page="params.pageNum"
-          :page-sizes="[20,50,100]"
-          :page-size="params.pageSize"
-          layout="total, sizes, prev, pager, next"
-          :total="total">
-      </el-pagination>
-    </div>
+<!--    <div style="margin-top: 10px">-->
+<!--      <el-pagination-->
+<!--          @size-change="handleSizeChange"-->
+<!--          @current-change="handleCurrentChange"-->
+<!--          :current-page="params.pageNum"-->
+<!--          :page-sizes="[20,50,100]"-->
+<!--          :page-size="params.pageSize"-->
+<!--          layout="total, sizes, prev, pager, next"-->
+<!--          :total="total">-->
+<!--      </el-pagination>-->
+<!--    </div>-->
     <div>
       <!--      {-->
       <!--      "id": 1,-->

@@ -9,16 +9,16 @@
           <el-form-item label-width="40%">
             <div class="block" style="margin-top: 10px;" v-if="form.avatar === null">
               <el-avatar shape="circle" :size="medium" :src="circleUrl"
-                style="width: 90px; height: 90px; border-radius: 50%; margin-right: 5px;"></el-avatar>
+                         style="width: 90px; height: 90px; border-radius: 50%; margin-right: 5px;"></el-avatar>
             </div>
             <div class="block" style="margin-top: 10px;" v-else>
               <el-image style="width: 90px; height: 90px; border-radius: 50%; margin-right: 5px;"
-                :src="imageUrl"></el-image>
+                        :src="imageUrl"></el-image>
             </div>
           </el-form-item>
           <el-form-item label-width="40%">
             <el-upload action="http://localhost:8085/api/files/upload" :on-success="successUpload"
-              :show-file-list="showFileList">
+                       :show-file-list="showFileList">
               <el-button size="small" type="primary">点击上传</el-button>
             </el-upload>
           </el-form-item>
@@ -70,19 +70,26 @@ export default {
     initUser() {
       this.imageUrl = 'http://localhost:8085/api/files/' + this.form.avatar;
     },
-    // findUser() {
-    //   request.get("/getUser").then(res => {
-    //     if (res.code === 0) {
-    //       this.form = res.data;
-    //       console.log(res.data)
-    //       this.imageUrl = 'http://localhost:8085/api/files/' + this.form.avatar;
-    //       // localStorage.removeItem("user");
-    //       // localStorage.setItem("user", JSON.stringify(res.data));
-    //     } else {
-    //       this.$message.error(res.msg);
-    //     }
-    //   })
-    // },
+    findUser() {
+      request.get("/getUser").then(res => {
+        if (res.code === 0) {
+          this.form = res.data;
+          console.log(res.data)
+          this.imageUrl = 'http://localhost:8085/api/files/' + this.form.avatar;
+          // localStorage.removeItem("user");
+          let user = JSON.parse(localStorage.getItem("user"));
+          user.avatar = res.data.avatar;
+          user.email = res.data.email;
+          user.name = res.data.name;
+          user.phone = res.data.phone;
+          user.userName = res.data.userName;
+          localStorage.setItem("user", JSON.stringify(user));
+          // localStorage.setItem("user", JSON.stringify(res.data));
+        } else {
+          this.$message.error(res.msg);
+        }
+      })
+    },
     edit() {
       request.post("/updatePersonal", this.form).then(res => {
         if (res.code === 0) {
@@ -128,6 +135,6 @@ export default {
 
 .box-card {
   width: 580px;
-  height: 550px;
+  height: 750px;
 }
 </style>
