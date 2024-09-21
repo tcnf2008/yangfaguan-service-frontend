@@ -29,10 +29,10 @@
         <el-table-column prop="appointmentTime" label="预约时间" align="center"></el-table-column>
         <el-table-column prop="statusName" label="预约状态" align="center"></el-table-column>
         <el-table-column prop="createdAt" label="创建时间" align="center"></el-table-column>
-        <el-table-column v-if="user.role === 'ADMIN'" label="操作" align="center">
+        <el-table-column  label="操作" align="center">
           <template slot-scope="scope">
             <!--            <el-button type="primary" @click="edit(scope.row)">编辑</el-button>-->
-            <el-popconfirm title="确定取消吗？" @confirm="cancelAppointment(scope.row)">
+            <el-popconfirm v-if="scope.row.status === 'PENDING'||scope.row.status === 'APPROVED'" title="确定取消吗？" @confirm="cancelAppointment(scope.row)">
               <el-button slot="reference" type="danger" style="margin-left: 5px">取消预约</el-button>
             </el-popconfirm>
           </template>
