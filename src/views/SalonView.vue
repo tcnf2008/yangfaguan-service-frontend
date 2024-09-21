@@ -10,7 +10,7 @@
     <div>
       <el-table :data="tableData" style="width: 100%">
         <el-table-column type="index" label="编号" width="50" align="center"></el-table-column>
-        <el-table-column prop="name" label="姓名" align="center"></el-table-column>
+        <el-table-column prop="name" label="名称" align="center"></el-table-column>
         <el-table-column prop="address" label="店铺地址" align="center"></el-table-column>
         <el-table-column prop="phone" label="电话" align="center"></el-table-column>
         <el-table-column label="操作" align="center">

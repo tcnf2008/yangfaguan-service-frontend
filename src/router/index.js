@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+// import HomeView from '../views/HomeView.vue'
 import LayoutView from "@/views/Layout.vue";
 import LoginView from "@/views/LoginView.vue";
 import RegisterView from "@/views/RegisterView";
@@ -32,10 +32,10 @@ const routes = [
     name: 'Layout',
     component: LayoutView,
     children: [
-      {
-        path: '',
-        component: HomeView
-      },
+      // {
+      //   path: '',
+      //   component: HomeView
+      // },
       {
         path: '/password',
         name: 'Password',

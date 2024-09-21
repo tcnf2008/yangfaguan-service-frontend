@@ -3,7 +3,7 @@
     <div
         style="width: 400px; height: 400px; margin: 150px auto; background-color:rgba(396,396,279,0.5); border-radius: 10px">
       <div style="width: 100%; height: 60px; margin-top: 30px; font-size: 30px; text-align: center; color: #4a5ed0">
-        养发馆预约系统
+        养发馆服务预约系统
       </div>
       <div style="width: 100%; height: 50px; font-size: 25px; text-align: center; color: #4a5ed0">
         欢迎登录
