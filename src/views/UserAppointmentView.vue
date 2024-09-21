@@ -84,7 +84,7 @@ export default {
   // 页面加载的时候，做一些事情，在created里面
   created() {
     this.loadSalonList();
-    this.findBySearch();
+
   },
   // 定义一些页面上控件出发的事件调用的方法
   methods: {
@@ -98,6 +98,7 @@ export default {
           let salonList = res.data;
           this.salonList = salonList;
           this.params.salonId = salonList[0].id;
+          this.findBySearch();
         } else {
           // this.$message.error(res.msg);
           this.$notify({
