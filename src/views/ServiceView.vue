@@ -26,15 +26,15 @@
         <el-table-column prop="category" label="分类" align="center"></el-table-column>
         <el-table-column prop="remark" label="亮点词" align="center"></el-table-column>
         <el-table-column prop="description" label="描述" align="center"></el-table-column>
-        <el-table-column prop="pic" label="产品小图" align="center">
-          <template v-slot="scope">
-            <el-image
-                style="width: 70px; height: 70px; border-radius: 50%"
-                :src="'http://localhost:8085/api/files/' + scope.row.pic"
-                :preview-src-list="['http://localhost:8085/api/files/' + scope.row.pic]">
-            </el-image>
-          </template>
-        </el-table-column>
+<!--        <el-table-column prop="pic" label="产品小图" align="center">-->
+<!--          <template v-slot="scope">-->
+<!--            <el-image-->
+<!--                style="width: 70px; height: 70px; border-radius: 50%"-->
+<!--                :src="'http://localhost:8085/api/files/' + scope.row.pic"-->
+<!--                :preview-src-list="['http://localhost:8085/api/files/' + scope.row.pic]">-->
+<!--            </el-image>-->
+<!--          </template>-->
+<!--        </el-table-column>-->
         <el-table-column prop="picIntroduce" label="产品卖点图片" align="center">
           <template v-slot="scope">
             <el-image
@@ -100,11 +100,11 @@
             <el-input v-model="form.description" autocomplete="off" style="width: 90%"></el-input>
           </el-form-item>
 
-          <el-form-item prop="pic" label="产品小图" label-width="25%">
-            <el-upload action="http://localhost:8085/api/files/upload" :on-success="successUploadPic">
-              <el-button size="small" type="primary">点击上传</el-button>
-            </el-upload>
-          </el-form-item>
+<!--          <el-form-item prop="pic" label="产品小图" label-width="25%">-->
+<!--            <el-upload action="http://localhost:8085/api/files/upload" :on-success="successUploadPic">-->
+<!--              <el-button size="small" type="primary">点击上传</el-button>-->
+<!--            </el-upload>-->
+<!--          </el-form-item>-->
           <el-form-item prop="picIntroduce" label="产品卖点图片" label-width="25%">
             <el-upload action="http://localhost:8085/api/files/upload" :on-success="successUploadPicIntro">
               <el-button size="small" type="primary">点击上传</el-button>

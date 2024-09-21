@@ -82,8 +82,10 @@ export default {
           this.$message.success("登录成功");
           console.log(res.data);
           localStorage.setItem("user", JSON.stringify(res.data));
-          if (res.data.role === 'ADMIN' || res.data.role === 'MANAGER' || res.data.role === 'TECHNICIAN') {
+          if (res.data.role === 'ADMIN') {
             this.$router.push("/salon");
+          } else if (res.data.role === 'MANAGER' || res.data.role === 'TECHNICIAN') {
+            this.$router.push("/userAppointment");
           } else if (res.data.role === 'USER') {
             this.$router.push("/appointment");
           }
