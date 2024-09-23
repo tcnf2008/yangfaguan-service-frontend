@@ -210,6 +210,7 @@ export default {
     },
     successUpload(res) {
       this.form.avatar = res.data;
+      this.$refs.upload.clearFiles(); // todo: test 清理之前选中的文件
     },
     del(id) {
       request.delete("/user/" + id).then(res => {
